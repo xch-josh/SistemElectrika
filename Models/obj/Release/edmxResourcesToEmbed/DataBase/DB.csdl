@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbElectrikaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DbElectrikaEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="CobrarVenta">
+      <Parameter Name="IdVenta" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Cotizacion_caducada" />
+    <FunctionImport Name="DevolverVenta">
+      <Parameter Name="IdVenta" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LimpiarCarrito" />
+    <EntitySet Name="Carrito" EntityType="DbElectrikaModel.Carrito" />
+    <EntitySet Name="Categorias" EntityType="DbElectrikaModel.Categorias" />
+    <EntitySet Name="Clientes" EntityType="DbElectrikaModel.Clientes" />
+    <EntitySet Name="Compras" EntityType="DbElectrikaModel.Compras" />
+    <EntitySet Name="Configuraciones" EntityType="DbElectrikaModel.Configuraciones" />
+    <EntitySet Name="Cotizaciones" EntityType="DbElectrikaModel.Cotizaciones" />
+    <EntitySet Name="Creditos" EntityType="DbElectrikaModel.Creditos" />
+    <EntitySet Name="CreditosPagos" EntityType="DbElectrikaModel.CreditosPagos" />
+    <EntitySet Name="DetalleCompra" EntityType="DbElectrikaModel.DetalleCompra" />
+    <EntitySet Name="DetalleCotizacion" EntityType="DbElectrikaModel.DetalleCotizacion" />
+    <EntitySet Name="DetalleProforma" EntityType="DbElectrikaModel.DetalleProforma" />
+    <EntitySet Name="DetalleProveedor" EntityType="DbElectrikaModel.DetalleProveedor" />
+    <EntitySet Name="DetalleVenta" EntityType="DbElectrikaModel.DetalleVenta" />
+    <EntitySet Name="Envios" EntityType="DbElectrikaModel.Envios" />
+    <EntitySet Name="Productos" EntityType="DbElectrikaModel.Productos" />
+    <EntitySet Name="Proformas" EntityType="DbElectrikaModel.Proformas" />
+    <EntitySet Name="Proveedores" EntityType="DbElectrikaModel.Proveedores" />
+    <EntitySet Name="sysdiagrams" EntityType="DbElectrikaModel.sysdiagrams" />
+    <EntitySet Name="Ventas" EntityType="DbElectrikaModel.Ventas" />
+    <AssociationSet Name="FK_Carrito_Productos" Association="DbElectrikaModel.FK_Carrito_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Carrito" EntitySet="Carrito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cotizaciones_Clientes" Association="DbElectrikaModel.FK_Cotizaciones_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Cotizaciones" EntitySet="Cotizaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proformas_Clientes" Association="DbElectrikaModel.FK_Proformas_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Proformas" EntitySet="Proformas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_Clientes" Association="DbElectrikaModel.FK_Ventas_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Ventas" EntitySet="Ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compras_DetalleProveedor" Association="DbElectrikaModel.FK_Compras_DetalleProveedor">
+      <End Role="DetalleProveedor" EntitySet="DetalleProveedor" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleCompra_Compras" Association="DbElectrikaModel.FK_DetalleCompra_Compras">
+      <End Role="Compras" EntitySet="Compras" />
+      <End Role="DetalleCompra" EntitySet="DetalleCompra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleCotizacion_Cotizaciones" Association="DbElectrikaModel.FK_DetalleCotizacion_Cotizaciones">
+      <End Role="Cotizaciones" EntitySet="Cotizaciones" />
+      <End Role="DetalleCotizacion" EntitySet="DetalleCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Creditos_Ventas" Association="DbElectrikaModel.FK_Creditos_Ventas">
+      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="Creditos" EntitySet="Creditos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CreditosPagos_Creditos" Association="DbElectrikaModel.FK_CreditosPagos_Creditos">
+      <End Role="Creditos" EntitySet="Creditos" />
+      <End Role="CreditosPagos" EntitySet="CreditosPagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleCompra_Productos" Association="DbElectrikaModel.FK_DetalleCompra_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetalleCompra" EntitySet="DetalleCompra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleCotizacion_Productos" Association="DbElectrikaModel.FK_DetalleCotizacion_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetalleCotizacion" EntitySet="DetalleCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleProforma_Productos" Association="DbElectrikaModel.FK_DetalleProforma_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetalleProforma" EntitySet="DetalleProforma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleProforma_Proformas" Association="DbElectrikaModel.FK_DetalleProforma_Proformas">
+      <End Role="Proformas" EntitySet="Proformas" />
+      <End Role="DetalleProforma" EntitySet="DetalleProforma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleProveedor_Proveedores" Association="DbElectrikaModel.FK_DetalleProveedor_Proveedores">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="DetalleProveedor" EntitySet="DetalleProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleVenta_Productos" Association="DbElectrikaModel.FK_DetalleVenta_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleVenta_Ventas" Association="DbElectrikaModel.FK_DetalleVenta_Ventas">
+      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Envios_Ventas" Association="DbElectrikaModel.FK_Envios_Ventas">
+      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="Envios" EntitySet="Envios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Carrito">
+    <Key>
+      <PropertyRef Name="IdCarrito" />
+    </Key>
+    <Property Name="IdCarrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SubTotalNeto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="Productos" Relationship="DbElectrikaModel.FK_Carrito_Productos" FromRole="Carrito" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categoria" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Nombres" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Apellidos" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int32" Nullable="false" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Cotizaciones" Relationship="DbElectrikaModel.FK_Cotizaciones_Clientes" FromRole="Clientes" ToRole="Cotizaciones" />
+    <NavigationProperty Name="Proformas" Relationship="DbElectrikaModel.FK_Proformas_Clientes" FromRole="Clientes" ToRole="Proformas" />
+    <NavigationProperty Name="Ventas" Relationship="DbElectrikaModel.FK_Ventas_Clientes" FromRole="Clientes" ToRole="Ventas" />
+  </EntityType>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDetProveedor" Type="Int32" Nullable="false" />
+    <Property Name="NumeroFactura" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="DetalleProveedor" Relationship="DbElectrikaModel.FK_Compras_DetalleProveedor" FromRole="Compras" ToRole="DetalleProveedor" />
+    <NavigationProperty Name="DetalleCompra" Relationship="DbElectrikaModel.FK_DetalleCompra_Compras" FromRole="Compras" ToRole="DetalleCompra" />
+  </EntityType>
+  <EntityType Name="Configuraciones">
+    <Key>
+      <PropertyRef Name="IdConfiguracion" />
+    </Key>
+    <Property Name="IdConfiguracion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlertaStockBajo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Cotizaciones">
+    <Key>
+      <PropertyRef Name="IdCotizacion" />
+    </Key>
+    <Property Name="IdCotizacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClietne" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalNeto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="FehcaCreacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaExpiracion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Clientes" Relationship="DbElectrikaModel.FK_Cotizaciones_Clientes" FromRole="Cotizaciones" ToRole="Clientes" />
+    <NavigationProperty Name="DetalleCotizacion" Relationship="DbElectrikaModel.FK_DetalleCotizacion_Cotizaciones" FromRole="Cotizaciones" ToRole="DetalleCotizacion" />
+  </EntityType>
+  <EntityType Name="Creditos">
+    <Key>
+      <PropertyRef Name="idCredito" />
+    </Key>
+    <Property Name="idCredito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idVenta" Type="Int32" Nullable="false" />
+    <Property Name="DeudaInicial" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Ventas" Relationship="DbElectrikaModel.FK_Creditos_Ventas" FromRole="Creditos" ToRole="Ventas" />
+    <NavigationProperty Name="CreditosPagos" Relationship="DbElectrikaModel.FK_CreditosPagos_Creditos" FromRole="Creditos" ToRole="CreditosPagos" />
+  </EntityType>
+  <EntityType Name="CreditosPagos">
+    <Key>
+      <PropertyRef Name="idPago" />
+    </Key>
+    <Property Name="idPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCredito" Type="Int32" Nullable="false" />
+    <Property Name="Monto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Creditos" Relationship="DbElectrikaModel.FK_CreditosPagos_Creditos" FromRole="CreditosPagos" ToRole="Creditos" />
+  </EntityType>
+  <EntityType Name="DetalleCompra">
+    <Key>
+      <PropertyRef Name="IdDetCompra" />
+    </Key>
+    <Property Name="IdDetCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdCompra" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Compras" Relationship="DbElectrikaModel.FK_DetalleCompra_Compras" FromRole="DetalleCompra" ToRole="Compras" />
+    <NavigationProperty Name="Productos" Relationship="DbElectrikaModel.FK_DetalleCompra_Productos" FromRole="DetalleCompra" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="DetalleCotizacion">
+    <Key>
+      <PropertyRef Name="IdDetCotizacion" />
+    </Key>
+    <Property Name="IdDetCotizacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SubTotalNeto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdCotizacion" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cotizaciones" Relationship="DbElectrikaModel.FK_DetalleCotizacion_Cotizaciones" FromRole="DetalleCotizacion" ToRole="Cotizaciones" />
+    <NavigationProperty Name="Productos" Relationship="DbElectrikaModel.FK_DetalleCotizacion_Productos" FromRole="DetalleCotizacion" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="DetalleProforma">
+    <Key>
+      <PropertyRef Name="IdDetProforma" />
+    </Key>
+    <Property Name="IdDetProforma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descuento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdProforma" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="DbElectrikaModel.FK_DetalleProforma_Productos" FromRole="DetalleProforma" ToRole="Productos" />
+    <NavigationProperty Name="Proformas" Relationship="DbElectrikaModel.FK_DetalleProforma_Proformas" FromRole="DetalleProforma" ToRole="Proformas" />
+  </EntityType>
+  <EntityType Name="DetalleProveedor">
+    <Key>
+      <PropertyRef Name="IdDetProveedor" />
+    </Key>
+    <Property Name="IdDetProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vendedor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int32" Nullable="false" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Compras" Relationship="DbElectrikaModel.FK_Compras_DetalleProveedor" FromRole="DetalleProveedor" ToRole="Compras" />
+    <NavigationProperty Name="Proveedores" Relationship="DbElectrikaModel.FK_DetalleProveedor_Proveedores" FromRole="DetalleProveedor" ToRole="Proveedores" />
+  </EntityType>
+  <EntityType Name="DetalleVenta">
+    <Key>
+      <PropertyRef Name="IdDetVenta" />
+    </Key>
+    <Property Name="IdDetVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SubTotalNeto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdVenta" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="DbElectrikaModel.FK_DetalleVenta_Productos" FromRole="DetalleVenta" ToRole="Productos" />
+    <NavigationProperty Name="Ventas" Relationship="DbElectrikaModel.FK_DetalleVenta_Ventas" FromRole="DetalleVenta" ToRole="Ventas" />
+  </EntityType>
+  <EntityType Name="Envios">
+    <Key>
+      <PropertyRef Name="IdEnvio" />
+    </Key>
+    <Property Name="IdEnvio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVenta" Type="Int32" Nullable="false" />
+    <Property Name="Direccion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Items" Type="Int32" Nullable="false" />
+    <Property Name="Recibio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaCreación" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Ventas" Relationship="DbElectrikaModel.FK_Envios_Ventas" FromRole="Envios" ToRole="Ventas" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Marca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+    <Property Name="PrecioCompra" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Ganancia" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TipoGanancia" Type="Boolean" Nullable="false" />
+    <Property Name="PrecioVenta" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Existencia" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" />
+    <Property Name="UnidadMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Carrito" Relationship="DbElectrikaModel.FK_Carrito_Productos" FromRole="Productos" ToRole="Carrito" />
+    <NavigationProperty Name="DetalleCompra" Relationship="DbElectrikaModel.FK_DetalleCompra_Productos" FromRole="Productos" ToRole="DetalleCompra" />
+    <NavigationProperty Name="DetalleCotizacion" Relationship="DbElectrikaModel.FK_DetalleCotizacion_Productos" FromRole="Productos" ToRole="DetalleCotizacion" />
+    <NavigationProperty Name="DetalleProforma" Relationship="DbElectrikaModel.FK_DetalleProforma_Productos" FromRole="Productos" ToRole="DetalleProforma" />
+    <NavigationProperty Name="DetalleVenta" Relationship="DbElectrikaModel.FK_DetalleVenta_Productos" FromRole="Productos" ToRole="DetalleVenta" />
+  </EntityType>
+  <EntityType Name="Proformas">
+    <Key>
+      <PropertyRef Name="IdProforma" />
+    </Key>
+    <Property Name="IdProforma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Descuento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Clientes" Relationship="DbElectrikaModel.FK_Proformas_Clientes" FromRole="Proformas" ToRole="Clientes" />
+    <NavigationProperty Name="DetalleProforma" Relationship="DbElectrikaModel.FK_DetalleProforma_Proformas" FromRole="Proformas" ToRole="DetalleProforma" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proveedor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int32" Nullable="false" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DetalleProveedor" Relationship="DbElectrikaModel.FK_DetalleProveedor_Proveedores" FromRole="Proveedores" ToRole="DetalleProveedor" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ventas">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalNeto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="Clientes" Relationship="DbElectrikaModel.FK_Ventas_Clientes" FromRole="Ventas" ToRole="Clientes" />
+    <NavigationProperty Name="Creditos" Relationship="DbElectrikaModel.FK_Creditos_Ventas" FromRole="Ventas" ToRole="Creditos" />
+    <NavigationProperty Name="DetalleVenta" Relationship="DbElectrikaModel.FK_DetalleVenta_Ventas" FromRole="Ventas" ToRole="DetalleVenta" />
+    <NavigationProperty Name="Envios" Relationship="DbElectrikaModel.FK_Envios_Ventas" FromRole="Ventas" ToRole="Envios" />
+  </EntityType>
+  <Association Name="FK_Carrito_Productos">
+    <End Type="DbElectrikaModel.Productos" Role="Productos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.Carrito" Role="Carrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="Carrito">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cotizaciones_Clientes">
+    <End Type="DbElectrikaModel.Clientes" Role="Clientes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.Cotizaciones" Role="Cotizaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Cotizaciones">
+        <PropertyRef Name="IdClietne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proformas_Clientes">
+    <End Type="DbElectrikaModel.Clientes" Role="Clientes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.Proformas" Role="Proformas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Proformas">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ventas_Clientes">
+    <End Type="DbElectrikaModel.Clientes" Role="Clientes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.Ventas" Role="Ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Ventas">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compras_DetalleProveedor">
+    <End Type="DbElectrikaModel.DetalleProveedor" Role="DetalleProveedor" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.Compras" Role="Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetalleProveedor">
+        <PropertyRef Name="IdDetProveedor" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="IdDetProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleCompra_Compras">
+    <End Type="DbElectrikaModel.Compras" Role="Compras" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleCompra" Role="DetalleCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compras">
+        <PropertyRef Name="IdCompra" />
+      </Principal>
+      <Dependent Role="DetalleCompra">
+        <PropertyRef Name="IdCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleCotizacion_Cotizaciones">
+    <End Type="DbElectrikaModel.Cotizaciones" Role="Cotizaciones" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleCotizacion" Role="DetalleCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cotizaciones">
+        <PropertyRef Name="IdCotizacion" />
+      </Principal>
+      <Dependent Role="DetalleCotizacion">
+        <PropertyRef Name="IdCotizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Creditos_Ventas">
+    <End Type="DbElectrikaModel.Ventas" Role="Ventas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.Creditos" Role="Creditos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ventas">
+        <PropertyRef Name="IdVenta" />
+      </Principal>
+      <Dependent Role="Creditos">
+        <PropertyRef Name="idVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CreditosPagos_Creditos">
+    <End Type="DbElectrikaModel.Creditos" Role="Creditos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.CreditosPagos" Role="CreditosPagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Creditos">
+        <PropertyRef Name="idCredito" />
+      </Principal>
+      <Dependent Role="CreditosPagos">
+        <PropertyRef Name="idCredito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleCompra_Productos">
+    <End Type="DbElectrikaModel.Productos" Role="Productos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleCompra" Role="DetalleCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="DetalleCompra">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleCotizacion_Productos">
+    <End Type="DbElectrikaModel.Productos" Role="Productos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleCotizacion" Role="DetalleCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="DetalleCotizacion">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleProforma_Productos">
+    <End Type="DbElectrikaModel.Productos" Role="Productos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleProforma" Role="DetalleProforma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="DetalleProforma">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleProforma_Proformas">
+    <End Type="DbElectrikaModel.Proformas" Role="Proformas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleProforma" Role="DetalleProforma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proformas">
+        <PropertyRef Name="IdProforma" />
+      </Principal>
+      <Dependent Role="DetalleProforma">
+        <PropertyRef Name="IdProforma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleProveedor_Proveedores">
+    <End Type="DbElectrikaModel.Proveedores" Role="Proveedores" Multiplicity="1" />
+    <End Type="DbElectrikaModel.DetalleProveedor" Role="DetalleProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="IdProveedor" />
+      </Principal>
+      <Dependent Role="DetalleProveedor">
+        <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleVenta_Productos">
+    <End Type="DbElectrikaModel.Productos" Role="Productos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleVenta_Ventas">
+    <End Type="DbElectrikaModel.Ventas" Role="Ventas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ventas">
+        <PropertyRef Name="IdVenta" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Envios_Ventas">
+    <End Type="DbElectrikaModel.Ventas" Role="Ventas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DbElectrikaModel.Envios" Role="Envios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ventas">
+        <PropertyRef Name="IdVenta" />
+      </Principal>
+      <Dependent Role="Envios">
+        <PropertyRef Name="IdVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

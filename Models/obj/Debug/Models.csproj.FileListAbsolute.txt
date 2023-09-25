@@ -1,0 +1,36 @@
+D:\PROYECTOS CSharp\SistemaVictoria\Models\bin\Debug\Models.dll.config
+D:\PROYECTOS CSharp\SistemaVictoria\Models\bin\Debug\Models.dll
+D:\PROYECTOS CSharp\SistemaVictoria\Models\bin\Debug\Models.pdb
+D:\PROYECTOS CSharp\SistemaVictoria\Models\bin\Debug\EntityFramework.dll
+D:\PROYECTOS CSharp\SistemaVictoria\Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\PROYECTOS CSharp\SistemaVictoria\Models\bin\Debug\EntityFramework.xml
+D:\PROYECTOS CSharp\SistemaVictoria\Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\PROYECTOS CSharp\SistemaVictoria\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+D:\PROYECTOS CSharp\SistemaVictoria\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\PROYECTOS CSharp\SistemaVictoria\Models\obj\Debug\Models.csproj.CopyComplete
+D:\PROYECTOS CSharp\SistemaVictoria\Models\obj\Debug\Models.dll
+D:\PROYECTOS CSharp\SistemaVictoria\Models\obj\Debug\Models.pdb
+D:\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\Models.dll.config
+D:\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\Models.dll
+D:\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\Models.pdb
+D:\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.dll
+D:\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.xml
+D:\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.csproj.CopyComplete
+D:\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.dll
+D:\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.pdb
+D:\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\Models.dll.config
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\Models.dll
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\Models.pdb
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.dll
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.xml
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.csproj.CopyComplete
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.dll
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.pdb
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Models\obj\Debug\Models.csproj.AssemblyReference.cache

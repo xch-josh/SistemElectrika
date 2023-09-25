@@ -1,0 +1,6 @@
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Components\obj\Debug\Components.csproj.AssemblyReference.cache
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Components\obj\Debug\Components.csproj.CoreCompileInputs.cache
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Components\bin\Debug\Components.dll
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Components\bin\Debug\Components.pdb
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Components\obj\Debug\Components.dll
+D:\MIS PROYECROS\PROYECTOS CSharp\SistemaElectrika\Components\obj\Debug\Components.pdb

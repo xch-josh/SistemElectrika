@@ -1,0 +1,9 @@
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\bin\Debug\SistemaVictoria.exe.config
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\bin\Debug\SistemaVictoria.exe
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\bin\Debug\SistemaVictoria.pdb
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\obj\Debug\SistemaVictoria.csproj.AssemblyReference.cache
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\obj\Debug\SistemaVictoria.Properties.Resources.resources
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\obj\Debug\SistemaVictoria.csproj.GenerateResource.cache
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\obj\Debug\SistemaVictoria.csproj.CoreCompileInputs.cache
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\obj\Debug\SistemaVictoria.exe
+D:\PROYECTOS CSharp\SistemaVictoria\SistemaVictoria\obj\Debug\SistemaVictoria.pdb
